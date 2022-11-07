@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,16 +13,17 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <link href="styles.css" rel="stylesheet" />
     <script type="module" src="app.js" defer></script>
+    <title>Fundly | Funding Simplified</title>
   </head>
-  <body class="subpixel-antialiased text-gray-700">
-    <header>
-      <a href="/" title="home">
-        <img src="images/logo.png" alt="brand logo of fundly" />
-        <span class="font-brand">Fundly</span>
+  <body class="subpixel-antialiased text-slate-800">
+    <header class="p-4 flex items-center justify-between w-full h-16 fixed top-0 left-0 bg-white">
+      <a href="/" title="home" class="flex items-center space-x-2">
+        <img src="images/logo.png" alt="brand logo of fundly" class="w-12 h-auto" />
+        <span class="font-brand text-xl">Fundly</span>
       </a>
 
       <!-- Show on Desktop -->
-      <nav>
+      <nav aria-labelledby="navigation" class="hidden">
         <ul>
           <li>Home</li>
           <li>About</li>
@@ -50,7 +51,7 @@
             />
           </svg>
         </button>
-        <nav>
+        <nav aria-labelledby="navigation" class="hidden">
           <ul>
             <li>Home</li>
             <li>About</li>
@@ -62,11 +63,18 @@
       </div>
     </header>
 
-    <main>
+    <main class="mt-16 px-4">
       <article id="home">
-        <section id="hero">
-          <h1>Funding Simplified</h1>
-          <h3>Building a Retailer Centric Ecosystem in Pharma Supply Chain</h3>
+        <section id="hero" class="relative">
+          <div class="-mx-4">
+            <img src="./images/hero-bg.jpg" alt="hero background image">
+          </div>
+          <div class="absolute inset-0 flex justify-center items-center">
+            <div class="text-center">
+              <h1 class="text-primary text-2xl font-bold">Funding Simplified</h1>
+              <h3 class="text-slate-600 font-light text-xl">Building a Retailer Centric Ecosystem in Pharma Supply Chain</h3>
+            </div>
+          </div>
         </section>
         <section id="intro">
           <div>
