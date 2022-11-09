@@ -66,10 +66,6 @@
         height: 240px;
     }
 
-    .benefit__item:not(:first-child) {
-            @apply hidden;
-    }
-
     .benefit__item-icon {
         @apply flex items-center justify-center text-accent;
     }
@@ -85,10 +81,22 @@
     }
 
     .process__item {
-        @apply w-[2050px] flex justify-center items-center;
+        @apply w-full flex justify-center items-center pb-6;
     }
 
     .process__item:not(:first-child) {
         @apply hidden;
+    }
+
+    .swiper-scrollbar {
+        @apply bg-yellow-50 !important;
+    }
+
+    .swiper-scrollbar .swiper-scrollbar-drag {
+        background-color: #fdb338;
+    }
+
+    .swiper {
+        @apply mt-8 !important;
     }
 }
