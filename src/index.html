@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link
-            href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
-            rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Kalam&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://rsms.me/"/>
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css"/>
     <link href="styles.css" rel="stylesheet"/>
@@ -16,10 +13,10 @@
     <title>Fundly | Funding Simplified</title>
 </head>
 <body class="subpixel-antialiased text-slate-800">
-<header class="p-4 flex items-center justify-between w-full h-16 fixed top-0 left-0 bg-white z-10">
+<header class="fixed top-0 left-0 z-10 flex items-center justify-between w-full h-16 p-4 bg-white">
     <a href="/" title="home" class="flex items-center space-x-2">
         <img src="images/logo.png" alt="brand logo of fundly" class="w-12 h-auto"/>
-        <span class="font-brand text-xl">Fundly</span>
+        <span class="text-xl font-brand">Fundly</span>
     </a>
 
     <!-- Show on Desktop -->
@@ -69,10 +66,10 @@
             <div class="-mx-4 opacity-50 blur-[1px] -z-10">
                 <img src="./images/hero-bg.jpg" alt="hero background image">
             </div>
-            <div class="absolute inset-0 flex justify-center items-center">
+            <div class="absolute inset-0 flex items-center justify-center">
                 <div class="text-center">
-                    <h1 class="text-primary text-3xl font-bold">Funding Simplified</h1>
-                    <h3 class="text-slate-600 font-light text-xl">Building a Retailer Centric Ecosystem in Pharma Supply
+                    <h1 class="text-3xl font-bold text-primary">Funding Simplified</h1>
+                    <h3 class="text-xl font-light text-slate-600">Building a Retailer Centric Ecosystem in Pharma Supply
                         Chain</h3>
                 </div>
             </div>
@@ -103,7 +100,7 @@
             <div>
                 <div class="space-y-4">
                     <p>Retailers sales are uneven causing</p>
-                    <ul class="list-disc list-inside -mt-4">
+                    <ul class="-mt-4 list-disc list-inside">
                         <li>Short term capital mismatches</li>
                         <li>High borrowing cost</li>
                         <li>Loss of cash discount</li>
@@ -178,7 +175,7 @@
         <section id="benefit">
             <h2 class="text-center">Unlock The Future Of Your Business</h2>
             <h3 class="text-center">While you get Funds Instantly and Easily</h3>
-            <div class="benefit__items mt-6">
+            <div class="mt-6 benefit__items">
                 <div class="benefit__item">
                     <div class="benefit__item-icon">
                         <span>
@@ -242,71 +239,76 @@
                 </div>
             </div>
         </section>
-        <section id="process">
+        <section id="process" class="space-y-4">
             <h2 class="text-center">How it works</h2>
             <h3 class="text-center">Grow your business, faster with Fundly</h3>
             <!-- show on desktop -->
-            <img
-                    src="images/how-it-works.png"
-                    alt="A picture explaining how fundly app works"
-            />
-            <!-- show on mobile -->
-            <div>
-                <div>
+            <div class="hidden">
+                <img
+                        src="images/how-it-works.png"
+                        alt="A picture explaining how fundly app works"
+                />
+            </div>            <!-- show on mobile -->
+            <div class="flex justify-center items-center">
+                <div class="process__item">
                     <img
                             src="images/how-it-works-01.png"
                             alt="Download the fundly app and register with your mobile number"
                     />
                 </div>
-                <div>
+                <div class="process__item">
                     <img
                             src="images/how-it-works-02.png"
                             alt="Complete your application using online KYC and loan application"
                     />
                 </div>
-                <div>
+                <div class="process__item">
                     <img
                             src="images/how-it-works-03.png"
                             alt="Pre-Approved Limit, Get it sanctioned"
                     />
                 </div>
-                <div>
+                <div class="process__item">
                     <img src="images/how-it-works-04.png" alt="Get funded"/>
                 </div>
-                <div>
+                <div class="process__item">
                     <img src="images/how-it-works-05.png" alt="Easy Repayment"/>
                 </div>
             </div>
         </section>
-        <section id="download">
-            <article>
-                <h3>Get started with the Fundly App now!</h3>
-                <ul>
+        <section id="download" class="space-y-4">
+            <article class="space-y-4">
+                <h2>Get started with the Fundly App now!</h2>
+                <ul class="list-disc list-inside">
                     <li>Instant Funding Anytime, Anywhere</li>
                     <li>Hassle Free Online Registration</li>
                     <li>Track Disbursals On The Go</li>
                     <li>View Account Statements on the app</li>
                 </ul>
-                <a
+                <a class="flex justify-center"
                         href="https://play.google.com/store/apps/details?id=com.fundlyplus.crm&%20%20pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
                 ><img
+                        class="w-56"
                         alt="Get it on Google Play"
                         src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
                 /></a>
             </article>
-            <img
-                    src="images/get-started.png"
-                    alt="A picture of a mobile with fundly app"
-            />
+            <div class="flex justify-center">
+                <img
+                        class="w-64"
+                        src="images/get-started.png"
+                        alt="A picture of a mobile with fundly app"
+                />
+            </div>
         </section>
-        <section id="testimonial">
+        <section id="testimonial" class="space-y-4">
             <h2>Testimonials</h2>
             <h3>
                 Here&apos;s what retailers and distributors using Fundly have to say
                 about us
             </h3>
             <figure>
-                <blockquote>
+                <blockquote class="font-script text-lg">
                     Customer demands were increasing rapidly and we found it difficult
                     to meet them due to lack of access to quick finance. Ever since we
                     onboarded with Fundly, we have been able to efficiently manage our
@@ -357,7 +359,7 @@
 
     <article id="about">
         <h2>About Us</h2>
-        <div>
+        <div class="space-y-4">
             <h3>
                 Fundly was founded with a vision to make millions of small retailers
                 &amp; distributors across India future-ready

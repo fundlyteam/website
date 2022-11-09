@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer components {
+    section, #about, #team, #contact {
+        @apply px-4 py-6 space-y-4;
+    }
+
     h2 {
         @apply text-2xl text-primary font-semibold;
     }
@@ -10,6 +14,29 @@
     h3 {
         @apply text-lg;
     }
+
+    blockquote {
+        @apply text-blue-500;
+    }
+
+    blockquote:before {
+        color: #ccc;
+        content: open-quote;
+        font-size: 4em;
+        line-height: 0.1em;
+        vertical-align: -0.4em;
+    }
+
+    blockquote:after {
+        color: #ccc;
+        content: close-quote;
+        font-size: 4em;
+        line-height: 0.1em;
+        /*margin-right: 0.25em;*/
+        /*margin-bottom: 0.25em;*/
+        vertical-align: -0.6em;
+    }
+
     .feature__item {
         @apply text-center;
     }
@@ -29,10 +56,6 @@
         @apply text-lg;
     }
 
-    section {
-        @apply px-4 py-6;
-    }
-
     .benefit__items {
         @apply flex items-center space-x-4;
     }
@@ -41,6 +64,10 @@
         @apply text-center w-full mx-auto py-4 px-8 rounded shadow-md;
         max-width: 220px;
         height: 240px;
+    }
+
+    .benefit__item:not(:first-child) {
+            @apply hidden;
     }
 
     .benefit__item-icon {
@@ -54,4 +81,12 @@
     }
 
     .benefit__item-text {}
+
+    .process__item {
+        @apply w-[2050px] flex justify-center items-center;
+    }
+
+    .process__item:not(:first-child) {
+        @apply hidden;
+    }
 }
