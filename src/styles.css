@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-    section, #about, #team, #contact {
+    section:not(#achievements), #about, #team, #contact {
         @apply px-4 py-6 space-y-4;
     }
 
@@ -61,7 +61,7 @@
     }
 
     .benefit__item {
-        @apply text-center w-full mx-auto py-4 px-8 rounded shadow-md;
+        @apply text-center w-full mx-auto py-4 px-8 rounded-lg shadow-lg bg-white;
         max-width: 220px;
         height: 240px;
     }
@@ -80,7 +80,9 @@
         @apply h-24 w-24
     }
 
-    .benefit__item-text {}
+    .benefit__item-text {
+        @apply text-primary text-lg;
+    }
 
     .process__item {
         @apply w-[2050px] flex justify-center items-center;
