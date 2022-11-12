@@ -3,38 +3,65 @@
 @tailwind utilities;
 
 @layer components {
+
     section:not(#achievements), #about, #team, #contact {
-        @apply px-4 py-6 space-y-4;
+        @apply px-4 py-8 space-y-4;
+    }
+
+    #achievements {
+        @apply py-16;
+    }
+
+
+    #about {
+        @apply pb-16;
     }
 
     h2 {
-        @apply text-2xl text-primary font-semibold;
+        @apply text-2xl text-primary font-semibold text-center;
+    }
+
+    footer h2 {
+        @apply text-left;
     }
 
     h3 {
-        @apply text-lg;
+        @apply text-lg text-center text-slate-500 font-semibold;
     }
 
-    blockquote {
-        @apply text-blue-500;
+    label {
+        @apply block;
     }
 
-    blockquote:before {
-        color: #ccc;
-        content: open-quote;
-        font-size: 4em;
-        line-height: 0.1em;
-        vertical-align: -0.4em;
+    input {
+        @apply w-full rounded p-2 h-12;
     }
 
-    blockquote:after {
-        color: #ccc;
-        content: close-quote;
-        font-size: 4em;
-        line-height: 0.1em;
-        /*margin-right: 0.25em;*/
-        /*margin-bottom: 0.25em;*/
-        vertical-align: -0.6em;
+    .sms-sender {
+        @apply bg-accent uppercase tracking-wide px-4 py-2 rounded mt-8;
+    }
+
+    .logo-link {
+       @apply flex items-center space-x-2;
+    }
+
+    .logo-img {
+        @apply h-auto;
+    }
+
+    .logo-text {
+        @apply text-xl font-brand;
+    }
+
+    #mobile-nav ul li a {
+       @apply px-4;
+    }
+
+    #hero {
+        @apply relative;
+        /*background-image: url("./images/hero-bg.jpg");*/
+        /*@apply h-[320px] flex items-center bg-cover bg-center backdrop-blur-[1px] backdrop-opacity-60;*/
+        @apply h-[320px] flex items-center;
     }
 
     .feature__item {
@@ -98,5 +125,91 @@
 
     .swiper {
         @apply mt-8 !important;
+    }
+
+    #testimonial figure {
+        @apply flex flex-col items-center pt-4 pb-8 rounded shadow-md mx-2 mt-4 mb-12;
+    }
+
+    #testimonial figure blockquote {
+        @apply font-script text-lg px-4 min-h-[240px] mb-4 text-primary;
+    }
+
+    #testimonial figure blockquote span {
+       @apply relative inline-block text-6xl text-accent;
+    }
+
+    #testimonial figure blockquote span:first-child {
+       @apply top-5;
+    }
+    #testimonial figure blockquote span:nth-child(2) {
+       @apply -mt-8 top-10;
+    }
+    #testimonial figure img {
+        @apply w-32 h-32 rounded-full border-2 border-primary shadow-md mb-4;
+    }
+
+    #testimonial figure figcaption span:first-child {
+        @apply text-center;
+    }
+
+    #testimonial figure figcaption span:first-child {
+       @apply block font-black tracking-wide text-2xl text-primary;
+    }
+
+    #testimonial figure figcaption span:nth-child(2) {
+        @apply text-lg;
+    }
+
+    #team section {
+        @apply space-y-4
+    }
+
+    #team figure {
+       @apply rounded shadow-md p-1 bg-slate-100;
+    }
+
+    #team figure img {
+        @apply rounded;
+    }
+
+    #team figure figcaption {
+       @apply bg-white py-4 bg-slate-100;
+    }
+
+    #team figure figcaption h4 {
+        @apply text-primary font-black text-xl tracking-wide text-center;
+    }
+
+    #team figure figcaption h5 {
+        @apply text-center font-semibold text-slate-600;
+    }
+
+    #team figure figcaption a {
+        @apply flex mt-2 justify-center text-linkedin
+    }
+
+    #team figure figcaption svg {
+        @apply h-6 w-6 fill-current;
+    }
+
+    footer address a {
+        @apply flex items-center py-1;
+    }
+
+    footer address a span {
+        @apply text-primary inline-block mr-2;
+    }
+
+    footer main li a {
+       @apply text-blue-500;
+    }
+
+    #social svg {
+        @apply h-8 w-8 fill-current;
+    }
+
+    .google-play-button-img {
+        @apply w-56;
     }
 }
