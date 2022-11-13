@@ -68,6 +68,7 @@ function handleDownloadAppModal() {
 
     showDownloadAppModal.forEach(handler => {
         handler.addEventListener('click', () => {
+            body = document.querySelector('body');
             downloadAppModal.classList.remove('hidden');
             anime({
                 targets: '#body',

@@ -5,7 +5,7 @@
 @layer components {
 
     section:not(#achievements), #about, #team, #contact {
-        @apply px-4 py-8 space-y-4;
+        @apply px-4 py-8 space-y-4 md:px-8;
     }
 
     #achievements {
@@ -18,7 +18,7 @@
     }
 
     h2 {
-        @apply text-2xl text-primary font-semibold text-center;
+        @apply text-2xl text-primary font-semibold text-center md:text-left;
     }
 
     footer h2 {
@@ -72,15 +72,15 @@
     }
 
     .feature__item-icon-svg {
-        @apply h-12 w-12;
+        @apply h-12 w-12 md:h-24 md:w-24;
     }
 
     .feature__item-number {
-        @apply text-accent text-xl font-black;
+        @apply text-accent text-xl md:text-3xl font-black;
     }
 
     .feature__item-text {
-        @apply text-lg;
+        @apply text-lg md:text-xl;
     }
 
     .benefit__items {
