@@ -127,10 +127,33 @@ function handleDownloadAppForm() {
     });
 }
 
+function animateNumbers() {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                anime({
+                    targets: entry.target,
+                    innerText: [0, entry.target.innerText],
+                    round: 1,
+                    duration: 1000,
+                    easing: "easeInOutSine",
+                })
+                observer.unobserve(entry.target);
+            }
+        })
+    }, {threshold: 1})
+
+    const numbers = document.querySelectorAll('.number');
+    numbers.forEach(number => {
+        observer.observe(number);
+    })
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     handleMobileNav();
     handleDownloadAppModal();
     handleDownloadAppForm();
+    animateNumbers();
 
     //     Modal panel, show/hide based on modal state.
     //
