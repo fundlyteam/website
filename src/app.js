@@ -28,6 +28,14 @@ const testimonialSwiper = new Swiper('#testimonial-swiper', {
         delay: 5000,
         pauseOnMouseEnter: true,
     },
+    slidesPerView: 1,
+    spaceBetween: 10,
+    breakpoints: {
+      640: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+      }
+    },
     pagination: {
         el: '.swiper-pagination',
         clickable: true
