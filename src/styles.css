@@ -3,213 +3,227 @@
 @tailwind utilities;
 
 @layer components {
+  main section:not(#achievements),
+  #about,
+  #team,
+  #contact {
+    @apply w-full space-y-4 px-4 py-8 md:px-8 lg:py-16 lg:px-[calc((100vw-1024px)/2)];
+  }
 
-    section:not(#achievements), #about, #team, #contact {
-        @apply px-4 py-8 space-y-4 md:px-8;
-    }
+  #achievements {
+    @apply py-16 lg:py-16 lg:px-[calc((100vw-1024px)/2)];
+  }
 
-    #achievements {
-        @apply py-16;
-    }
+  header {
+    @apply lg:px-[calc((100vw-1024px)/2)];
+  }
 
+  #about {
+    @apply pb-16;
+  }
 
-    #about {
-        @apply pb-16;
-    }
+  h2 {
+    @apply text-center text-2xl font-semibold text-primary md:text-left;
+  }
 
-    h2 {
-        @apply text-2xl text-primary font-semibold text-center md:text-left;
-    }
+  h3 {
+    @apply text-center text-lg font-semibold text-slate-500;
+  }
 
-    footer h2 {
-        @apply text-left;
-    }
+  label {
+    @apply block;
+  }
 
-    h3 {
-        @apply text-lg text-center text-slate-500 font-semibold;
-    }
+  input {
+    @apply h-12 w-full rounded p-2 lg:h-10 lg:text-sm;
+  }
 
-    label {
-        @apply block;
-    }
+  .sms-sender {
+    @apply mt-8 rounded bg-accent px-4 py-2 uppercase tracking-wide;
+  }
 
-    input {
-        @apply w-full rounded p-2 h-12;
-    }
+  .logo-link {
+    @apply flex items-center space-x-2;
+  }
 
-    .sms-sender {
-        @apply bg-accent uppercase tracking-wide px-4 py-2 rounded mt-8;
-    }
+  .logo-img {
+    @apply h-auto;
+  }
 
-    .logo-link {
-       @apply flex items-center space-x-2;
-    }
+  .logo-text {
+    @apply font-brand text-xl;
+  }
 
-    .logo-img {
-        @apply h-auto;
-    }
+  #mobile-nav ul li a {
+    @apply px-4;
+  }
 
-    .logo-text {
-        @apply text-xl font-brand;
-    }
+  #hero {
+    @apply relative;
+    /*background-image: url("./images/hero-bg.jpg");*/
+    /*@apply h-[320px] flex items-center bg-cover bg-center backdrop-blur-[1px] backdrop-opacity-60;*/
+    @apply flex h-[320px] items-center lg:h-[calc(100vh-4rem)];
+  }
 
-    #mobile-nav ul li a {
-       @apply px-4;
-    }
+  .feature__item {
+    @apply text-center;
+  }
+  .feature__item-icon {
+    @apply flex items-center justify-center text-primary;
+  }
 
-    #hero {
-        @apply relative;
-        /*background-image: url("./images/hero-bg.jpg");*/
-        /*@apply h-[320px] flex items-center bg-cover bg-center backdrop-blur-[1px] backdrop-opacity-60;*/
-        @apply h-[320px] flex items-center;
-    }
+  .feature__item-icon-svg {
+    @apply h-12 w-12 md:h-24 md:w-24;
+  }
 
-    .feature__item {
-        @apply text-center;
-    }
-    .feature__item-icon {
-        @apply text-primary flex items-center justify-center;
-    }
+  .feature__item-number {
+    @apply text-xl font-black text-accent md:text-3xl;
+  }
 
-    .feature__item-icon-svg {
-        @apply h-12 w-12 md:h-24 md:w-24;
-    }
+  .feature__item-text {
+    @apply text-lg md:text-xl;
+  }
 
-    .feature__item-number {
-        @apply text-accent text-xl md:text-3xl font-black;
-    }
+  .benefit__items {
+    @apply flex items-center space-x-4;
+  }
 
-    .feature__item-text {
-        @apply text-lg md:text-xl;
-    }
+  .benefit__item {
+    @apply mx-auto w-full rounded-lg bg-white py-4 px-8 text-center shadow-lg;
+    max-width: 220px;
+    height: 240px;
+  }
 
-    .benefit__items {
-        @apply flex items-center space-x-4;
-    }
+  .benefit__item-icon {
+    @apply flex items-center justify-center text-accent;
+  }
 
-    .benefit__item {
-        @apply text-center w-full mx-auto py-4 px-8 rounded-lg shadow-lg bg-white;
-        max-width: 220px;
-        height: 240px;
-    }
+  .benefit__item-icon {
+  }
 
-    .benefit__item-icon {
-        @apply flex items-center justify-center text-accent;
-    }
+  .benefit__item-icon-svg {
+    @apply h-24 w-24;
+  }
 
-    .benefit__item-icon {}
+  .benefit__item-text {
+    @apply text-lg text-primary;
+  }
 
-    .benefit__item-icon-svg {
-        @apply h-24 w-24
-    }
+  .process__item {
+    @apply flex w-full items-center justify-center pb-6;
+  }
 
-    .benefit__item-text {
-        @apply text-primary text-lg;
-    }
+  .process__item:not(:first-child) {
+    @apply hidden;
+  }
 
-    .process__item {
-        @apply w-full flex justify-center items-center pb-6;
-    }
+  .swiper-scrollbar {
+    @apply bg-yellow-50 !important;
+  }
 
-    .process__item:not(:first-child) {
-        @apply hidden;
-    }
+  .swiper-scrollbar .swiper-scrollbar-drag {
+    background-color: #fdb338;
+  }
 
-    .swiper-scrollbar {
-        @apply bg-yellow-50 !important;
-    }
+  .swiper {
+    @apply mt-8 !important;
+  }
 
-    .swiper-scrollbar .swiper-scrollbar-drag {
-        background-color: #fdb338;
-    }
+  #testimonial figure {
+    @apply mx-2 mx-auto mt-4 mb-12 flex w-full max-w-sm flex-col items-center rounded pt-4 pb-8 shadow-md;
+  }
 
-    .swiper {
-        @apply mt-8 !important;
-    }
+  #testimonial figure blockquote {
+    @apply mb-4 min-h-[240px] px-4 font-script text-lg text-primary;
+  }
 
-    #testimonial figure {
-        @apply flex flex-col items-center pt-4 pb-8 rounded shadow-md mx-2 mt-4 mb-12;
-    }
+  #testimonial figure blockquote span {
+    @apply relative inline-block text-6xl text-accent;
+  }
 
-    #testimonial figure blockquote {
-        @apply font-script text-lg px-4 min-h-[240px] mb-4 text-primary;
-    }
+  #testimonial figure blockquote span:first-child {
+    @apply top-5;
+  }
+  #testimonial figure blockquote span:nth-child(2) {
+    @apply top-10 -mt-8;
+  }
+  #testimonial figure img {
+    @apply mb-4 h-32 w-32 rounded-full border-2 border-primary shadow-md;
+  }
 
-    #testimonial figure blockquote span {
-       @apply relative inline-block text-6xl text-accent;
-    }
+  #testimonial figure figcaption span:first-child {
+    @apply text-center;
+  }
 
-    #testimonial figure blockquote span:first-child {
-       @apply top-5;
-    }
-    #testimonial figure blockquote span:nth-child(2) {
-       @apply -mt-8 top-10;
-    }
-    #testimonial figure img {
-        @apply w-32 h-32 rounded-full border-2 border-primary shadow-md mb-4;
-    }
+  #testimonial figure figcaption span:first-child {
+    @apply block text-2xl font-black tracking-wide text-primary;
+  }
 
-    #testimonial figure figcaption span:first-child {
-        @apply text-center;
-    }
+  #testimonial figure figcaption span:nth-child(2) {
+    @apply text-lg;
+  }
 
-    #testimonial figure figcaption span:first-child {
-       @apply block font-black tracking-wide text-2xl text-primary;
-    }
+  #team section {
+    @apply space-y-4 md:space-y-0 lg:py-4;
+  }
 
-    #testimonial figure figcaption span:nth-child(2) {
-        @apply text-lg;
-    }
+  #team figure {
+    @apply rounded bg-slate-100 p-1 shadow-md md:w-1/2 lg:mx-auto lg:w-64;
+  }
 
-    #team section {
-        @apply space-y-4 md:space-y-0;
-    }
+  #team figure img {
+    @apply rounded;
+  }
 
-    #team figure {
-       @apply rounded shadow-md p-1 bg-slate-100 md:w-1/2;
-    }
+  #team figure figcaption {
+    @apply bg-white bg-slate-100 py-4;
+  }
 
-    #team figure img {
-        @apply rounded;
-    }
+  #team figure figcaption h4 {
+    @apply text-center text-xl font-black tracking-wide text-primary;
+  }
 
-    #team figure figcaption {
-       @apply bg-white py-4 bg-slate-100;
-    }
+  #team figure figcaption h5 {
+    @apply text-center font-semibold text-slate-600;
+  }
 
-    #team figure figcaption h4 {
-        @apply text-primary font-black text-xl tracking-wide text-center;
-    }
+  #team figure figcaption a {
+    @apply mt-2 flex justify-center text-linkedin;
+  }
 
-    #team figure figcaption h5 {
-        @apply text-center font-semibold text-slate-600;
-    }
+  #team figure figcaption svg {
+    @apply h-6 w-6 fill-current;
+  }
 
-    #team figure figcaption a {
-        @apply flex mt-2 justify-center text-linkedin
-    }
+  footer main div div {
+    @apply md:w-1/3 md:px-4 text-center md:text-left;
+  }
 
-    #team figure figcaption svg {
-        @apply h-6 w-6 fill-current;
-    }
+  footer h2 {
+    @apply text-lg text-center md:text-left mb-4;
+  }
 
-    footer address a {
-        @apply flex items-center py-1;
-    }
+  footer address a {
+    @apply flex items-center py-1 justify-center md:justify-start;
+  }
 
-    footer address a span {
-        @apply text-primary inline-block mr-2;
-    }
+  footer address a span {
+    @apply mr-2 inline-block text-primary;
+  }
 
-    footer main li a {
-       @apply text-blue-500;
-    }
+  footer main li a {
+    @apply text-blue-500 whitespace-nowrap;
+  }
 
-    #social svg {
-        @apply h-8 w-8 fill-current;
-    }
+  footer main li {
+    @apply text-center md:text-left;
+  }
 
-    .google-play-button-img {
-        @apply w-56;
-    }
+  #social svg {
+    @apply h-8 w-8 fill-current lg:h-6 lg:w-6;
+  }
+
+  .google-play-button-img {
+    @apply w-48 lg:w-40;
+  }
 }

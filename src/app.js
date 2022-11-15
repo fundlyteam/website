@@ -31,10 +31,14 @@ const testimonialSwiper = new Swiper('#testimonial-swiper', {
     slidesPerView: 1,
     spaceBetween: 10,
     breakpoints: {
-      640: {
-          slidesPerView: 2,
-          spaceBetween: 10,
-      }
+        640: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+        },
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+        },
     },
     pagination: {
         el: '.swiper-pagination',
