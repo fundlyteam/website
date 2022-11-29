@@ -7,11 +7,11 @@
   #about,
   #team,
   #contact {
-    @apply w-full space-y-4 px-4 py-8 md:px-8 lg:py-16 lg:px-[calc((100vw-1024px)/2)];
+    @apply w-full space-y-4 px-4 py-8 md:px-8 lg:py-32 lg:px-[calc((100vw-1024px)/2)];
   }
 
   #achievements {
-    @apply py-16 lg:py-16 lg:px-[calc((100vw-1024px)/2)];
+    @apply py-16 lg:py-32 lg:px-[calc((100vw-1024px)/2)];
   }
 
   header {
@@ -35,7 +35,7 @@
   }
 
   input {
-    @apply h-12 w-full rounded p-2 lg:h-10 lg:text-sm;
+    @apply h-12 w-full rounded p-2 lg:text-sm;
   }
 
   .sms-sender {
@@ -89,20 +89,19 @@
   }
 
   .benefit__item {
-    @apply mx-auto w-full rounded-lg bg-white py-4 px-8 text-center shadow-lg;
+    @apply mx-auto w-full rounded-lg bg-white px-8 text-center shadow-lg flex justify-center items-center m-4;
     max-width: 220px;
     height: 240px;
+    position: relative;
+    border-top-right-radius: 5rem;
   }
 
   .benefit__item-icon {
-    @apply flex items-center justify-center text-accent;
-  }
-
-  .benefit__item-icon {
+    @apply absolute top-0 right-0 -translate-y-2 translate-x-2 flex items-center justify-center text-accent;
   }
 
   .benefit__item-icon-svg {
-    @apply h-24 w-24;
+    @apply h-16 w-16;
   }
 
   .benefit__item-text {
@@ -134,7 +133,7 @@
   }
 
   #testimonial figure blockquote {
-    @apply mb-4 min-h-[240px] px-4 font-script text-lg text-primary;
+    @apply mb-4 min-h-[240px] px-4 italic text-primary;
   }
 
   #testimonial figure blockquote span {
@@ -168,7 +167,7 @@
   }
 
   #team figure {
-    @apply rounded bg-slate-100 p-1 shadow-md md:w-1/2 lg:mx-auto lg:w-64;
+    @apply rounded bg-slate-100 p-1 shadow-md md:w-1/2 lg:mx-auto lg:w-80 mt-4;
   }
 
   #team figure img {
@@ -195,12 +194,16 @@
     @apply h-6 w-6 fill-current;
   }
 
-  footer main div div {
+  footer main div {
     @apply md:w-1/3 md:px-4 text-center md:text-left;
   }
 
   footer h2 {
     @apply text-lg text-center md:text-left mb-4;
+  }
+
+  address {
+    @apply not-italic;
   }
 
   footer address a {
@@ -212,7 +215,7 @@
   }
 
   footer main li a {
-    @apply text-blue-500 whitespace-nowrap;
+    @apply underline whitespace-nowrap;
   }
 
   footer main li {
@@ -224,6 +227,6 @@
   }
 
   .google-play-button-img {
-    @apply w-48 lg:w-40;
+    @apply w-48;
   }
 }

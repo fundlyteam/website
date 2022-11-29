@@ -10,7 +10,6 @@ module.exports = withAnimations({
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
         brand: ['Lato', 'sans-serif'],
-        script: ['Kalam', 'cursive'],
       },
       colors: {
         primary: '#025196',
