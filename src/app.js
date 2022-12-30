@@ -80,7 +80,6 @@ function handleDownloadAppModal() {
 
     showDownloadAppModal.forEach(handler => {
         handler.addEventListener('click', () => {
-            body = document.querySelector('body');
             downloadAppModal.classList.remove('hidden');
             anime({
                 targets: '#body',
@@ -162,11 +161,57 @@ function animateNumbers() {
     })
 }
 
+function navMenu() {
+    const menuButton = document.querySelectorAll('.menu-button');
+    menuButton.forEach(nbm => {
+        nbm.addEventListener('click', e => {
+            document.querySelector(`#${nbm.getAttribute('data-target')}`)
+                .scrollIntoView({
+                    behavior: "smooth"
+                })
+        })
+    })
+    const menuObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const area = entry.target.getAttribute('id');
+                if (area === 'contact') {
+                    menuButton.forEach(mb => mb.classList.remove('active'))
+                    document.querySelector('[data-target="contact"]').classList.add('active')
+                }
+                if (area === 'about') {
+                    menuButton.forEach(mb => mb.classList.remove('active'))
+                    document.querySelector('[data-target="about"]').classList.add('active')
+                }
+                if (area === 'team') {
+                    menuButton.forEach(mb => mb.classList.remove('active'))
+                    document.querySelector('[data-target="team"]').classList.add('active')
+                }
+                if (area === 'home' || area === 'hero' || area === 'download') {
+                    menuButton.forEach(mb => mb.classList.remove('active'))
+                    document.querySelector('[data-target="home"]').classList.add('active')
+                }
+            }
+        })
+    }, {threshold: 0.9, rootMargin: "50px"})
+
+    document.querySelectorAll('article').forEach(article => {
+        menuObserver.observe(article);
+    })
+    document.querySelectorAll('section').forEach(section => {
+        menuObserver.observe(section);
+    })
+    document.querySelectorAll('form').forEach(form => {
+        menuObserver.observe(form);
+    })
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     handleMobileNav();
     handleDownloadAppModal();
     handleDownloadAppForm();
     animateNumbers();
+    navMenu();
 
     //     Modal panel, show/hide based on modal state.
     //
