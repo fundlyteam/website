@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!--    Favicon links-->
+  <link rel="icon" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+          rel="stylesheet"
+  />
+  <link rel="preconnect" href="https://rsms.me/"/>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css"/>
+  <link href="styles.css" rel="stylesheet"/>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script type="module" src="app.js" defer></script>
+  <title>Fundly | Funding Simplified</title>
+
+  <!--    Meta Pixel Code-->
+  <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1754720714872368');
+    fbq('track', 'PageView');
+  </script>
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1754720714872368');
+    fbq('track', 'PageView');
+  </script>
+  <!--    End Meta Pixel Code-->
+
+  <!--Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BETJ0B1G3F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-BETJ0B1G3F');
+  </script>
+  <!--End  Global site tag (gtag.js) - Google Analytics -->
+</head>
+<body class="text-slate-800 subpixel-antialiased">
+<header
+        class="fixed top-0 left-0 z-10 flex h-20 w-screen items-center justify-between bg-white p-4 shadow lg:px-32"
+>
+  <a href="/" title="home" class="logo-link">
+    <img
+            src="images/logo.png"
+            alt="brand logo of fundly"
+            class="logo-img w-10"
+    />
+    <span class="logo-text">Fundly</span>
+  </a>
+
+  <!-- Show on Desktop -->
+  <nav
+          aria-labelledby="navigation"
+          class="hidden items-center space-x-8 lg:flex"
+  >
+    <ul class="flex space-x-4">
+      <li data-target="home" class="menu-button active"><a href="index.html#home">Home</a></li>
+      <li data-target="about" class="menu-button"><a href="index.html#about">About</a></li>
+      <li data-target="team" class="menu-button"><a href="index.html#team">Team</a></li>
+      <li data-target="contact" class="menu-button"><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <button
+            class="show-download-app-modal rounded bg-accent px-3 py-2 text-white"
+    >
+      Get Instant Funding
+    </button>
+  </nav>
+
+  <!-- Show on Mobile -->
+  <div class="lg:hidden">
+    <button id="show-mobile-nav">
+      <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6"
+      >
+        <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+        />
+      </svg>
+    </button>
+    <nav
+            aria-labelledby="navigation"
+            class="pointer-events-none absolute inset-0 h-screen h-0 w-full opacity-0"
+            id="mobile-nav"
+    >
+      <div
+              class="h-full w-full bg-primary px-4 py-4 text-center text-blue-50"
+      >
+        <div class="mb-4 flex justify-end text-white">
+          <button type="button" id="hide-mobile-nav">
+            <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="h-8 w-8"
+            >
+              <path
+                      fill-rule="evenodd"
+                      d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+                      clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+        <ul class="space-y-4">
+          <li><a href="index.html#home" onclick="hideMobileNav()">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#team">Team</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <button type="button" class="sms-sender show-download-app-modal">
+          Get Instant Funding
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>

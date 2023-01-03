@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  position: relative;
+}
+
+.scroll-container {
+  position: absolute;
+  top: 0;
+  right:0;
+  height: 100%;
+}
+
+.scroll-container:before {
+  content: '';
+  display: block;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.scroll-container a {
+  position: sticky;
+  top: 88vh;
+  cursor: pointer;
+  font-size: 20px;
+}
+
 @layer components {
   main section:not(#achievements),
   #about,
@@ -11,7 +41,7 @@
   }
 
   #achievements {
-    @apply py-16 lg:py-32 lg:px-[calc((100vw-1024px)/2)];
+    @apply py-16 lg:py-16 lg:px-[calc((100vw-1024px)/2)];
   }
 
   header {
@@ -19,7 +49,7 @@
   }
 
   nav ul li a {
-   @apply border-b-accent px-2 py-1 transition-colors duration-200;
+    @apply border-b-accent px-2 py-1 transition-colors duration-200;
   }
 
   nav ul li:not(.active) a {
@@ -27,7 +57,7 @@
   }
 
   nav ul li.active a {
-    @apply bg-primary text-white rounded;
+    @apply text-primary font-bold rounded;
   }
 
   #about {
@@ -101,7 +131,7 @@
   }
 
   .benefit__item {
-    @apply mx-auto w-full rounded-lg bg-white px-8 text-center shadow-lg flex justify-center items-center m-4;
+    @apply mx-auto w-full rounded-lg bg-white px-8 text-center shadow-lg flex justify-center items-center m-4 bg-gradient-to-tr from-yellow-100 to-yellow-50;
     max-width: 220px;
     height: 200px;
     position: relative;
@@ -179,7 +209,7 @@
   }
 
   #team figure {
-    @apply rounded bg-slate-100 p-1 shadow-md md:w-1/2 md:w-80 mt-4;
+    @apply rounded bg-slate-100 p-1 shadow-md md:w-1/2 lg:w-64 mt-4;
   }
 
   #team figure img {
@@ -236,5 +266,30 @@
 
   .google-play-button-img {
     @apply w-48 lg:w-60;
+  }
+
+  ul.tick-points li::before {
+    content: '✓ ';
+    font-size: 1.1em;
+  }
+
+  main.extra {
+    @apply mt-20 p-4 w-full max-w-6xl mx-auto space-y-8 border-b pb-8;
+  }
+  main.extra h1 {
+    @apply text-center text-3xl pt-4;
+  }
+  main.extra h4 {
+    @apply text-blue-500 text-xl font-medium;
+  }
+
+  main.extra div {
+    @apply space-y-4;
+  }
+  main.extra ul {
+    @apply space-y-4;
+  }
+  main.extra a {
+    @apply text-blue-500;
   }
 }

@@ -1,6 +1,7 @@
-import Swiper, {Pagination, Scrollbar, Navigation, Autoplay} from 'swiper';
 import anime from "animejs";
+import Swiper,{ Autoplay,Navigation,Pagination,Scrollbar } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
+import Swal from 'sweetalert2'
 
 const benefitSwiper = new Swiper('#benefit-swiper', {
     modules: [Navigation],
@@ -71,6 +72,19 @@ function handleMobileNav() {
             easing: 'linear',
         });
     })
+}
+
+function hideMobileNav() {
+    const mobileNav = document.getElementById('mobile-nav')
+    mobileNav.classList.add('pointer-events-none');
+    anime({
+        targets: '#mobile-nav',
+        keyframes: [
+            {height: 0, duration: 100},
+            {opacity: 0, duration: 0}
+        ],
+        easing: 'linear',
+    });
 }
 
 function handleDownloadAppModal() {
@@ -163,14 +177,15 @@ function animateNumbers() {
 
 function navMenu() {
     const menuButton = document.querySelectorAll('.menu-button');
-    menuButton.forEach(nbm => {
-        nbm.addEventListener('click', e => {
-            document.querySelector(`#${nbm.getAttribute('data-target')}`)
-                .scrollIntoView({
-                    behavior: "smooth"
-                })
-        })
-    })
+    // menuButton.forEach(nbm => {
+    //     nbm.addEventListener('click', e => {
+    //         window.scrollTo({
+    //             behavior: "smooth",
+    //             top: document.querySelector(`#${nbm.getAttribute('data-target')}`).getBoundingClientRect().top - document.body.getBoundingClientRect().top - 20
+    //
+    //         })
+    //     })
+    // })
     const menuObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -212,13 +227,59 @@ document.addEventListener('DOMContentLoaded', () => {
     handleDownloadAppForm();
     animateNumbers();
     navMenu();
-
-    //     Modal panel, show/hide based on modal state.
-    //
-    //     Entering: "ease-out duration-300"
-    // From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-    // To: "opacity-100 translate-y-0 sm:scale-100"
-    // Leaving: "ease-in duration-200"
-    // From: "opacity-100 translate-y-0 sm:scale-100"
-    // To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
 })
+
+$('#contact').submit(function(e){
+    e.preventDefault();
+
+    $.ajax({
+        url: "https://ardouranalytics.com/fundly/api/Website/enquiry",
+        type: "POST",
+        data: new FormData(this),
+        contentType: false,
+        cache: false,
+        processData: false,
+        success: function(response) {
+            $("#contact").trigger("reset"); // to reset form input fields
+            Swal.fire({
+                title: 'Thank You!',
+                text: 'Someone from our team will reach out to you shortly.',
+                icon: 'success',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#025196'
+            })
+        },
+        error: function(e) {
+            console.log(e);
+        }
+    });
+});
+
+$('#send-app-link').submit(function(e){
+    e.preventDefault();
+
+    $.ajax({
+        url: "https://ardouranalytics.com/fundly/api/Website/app",
+        type: "POST",
+        data: new FormData(this),
+        contentType: false,
+        cache: false,
+        processData: false,
+        success: function(response) {
+            $("#send-app-link").trigger("reset"); // to reset form input fields
+            document.getElementById('download-app-modal').classList.add('hidden');
+            Swal.fire({
+                title: 'Thank You!',
+                text: 'You will receive an SMS from us with the link to download the app shortly!',
+                icon: 'success',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#025196'
+            })
+        },
+        error: function(e) {
+            console.log(e);
+            document.getElementById('download-app-modal').classList.add('hidden');
+        }
+    });
+
+});
