@@ -292,4 +292,7 @@ body {
   main.extra a {
     @apply text-blue-500;
   }
+  main.extra h5 {
+    @apply font-semibold;
+  }
 }
