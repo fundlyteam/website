@@ -1,0 +1,46 @@
+<include src="partials/header.html"></include>
+
+<main class="mt-20 py-4 md:px-[calc(50vw-512px)] px-4">
+    <h1 class="my-8 font-semibold text-4xl text-primary text-center md:text-left">Products</h1>
+    <div class="md:grid grid-cols-2 gap-16 mb-16">
+        <article class="space-y-4" id="products">
+           <h3 class="text-left text-gray-600">Invoice Payment</h3>
+            <ul class="list-disc pl-4 space-y-2">
+               <li>Invoices can be used for paying the Registered Distributors by selecting the distributor-wise Invoices preuploaded on the Fundly App</li>
+               <li>Invoices can also be used for paying a lump&ndash;sum amount to the Registered Distributors on the Fundly App</li>
+            </ul>
+        </article>
+        <article class="space-y-4 mt-8 md:mt-0">
+            <h3 class="text-left text-gray-600">InstaCash</h3>
+            <ul class="list-disc pl-4 space-y-2">
+                <li>Insta Cash can be used for paying the Non&ndash;Registered Distributors by getting the funds in the Business bank account of the Retailer</li>
+                <li>Borrower can use the funds to pay off the pending Invoices with their Distributors</li>
+            </ul>
+        </article>
+    </div>
+    <h2 class="text-2xl mb-8 text-center md:text-left">Here&apos;s How the Fund Flow Works</h2>
+    <div class="md:grid grid-cols-2 gap-16 mb-24">
+        <article class="space-y-12">
+            <h3 class="text-left text-gray-600 text-xl">Fund Request Flow</h3>
+            <div>
+                <img src="./images/fund-request-flow.png" alt="A picture showing how the fund request flow works on fundly">
+            </div>
+            <ul class="list-disc pl-4 space-y-2">
+                <li>Pay Distributors &ndash; to pay due invoices or lump sum to the registered distributors</li>
+                <li>Insta Cash &ndash; to pay non-registered distributors or for personal use</li>
+                <li>Funds are transferred directly from the Lender&apos;s bank account to the Distributor&apos;s or Retailer&apos;s bank account according to the product selected</li>
+            </ul>
+        </article>
+        <article class="space-y-12 mt-8 md:mt-0">
+            <h3 class="text-left text-gray-600 text-xl">Repayment Flow</h3>
+            <div>
+                <img src="./images/repayment-flow.png" alt="A picture showing how the repayment flow works on fundly">
+            </div>
+            <ul class="list-disc pl-4 space-y-2">
+                <li>Payment Gateway &ndash; Fundly has integrated with PGs for providing in-app repayment facility through UPI/Net Banking</li>
+                <li>Funds are transferred directly from the Borrower&apos;s bank account to Lender&apos;s bank account</li>
+            </ul>
+        </article>
+    </div>
+</main>
+<include src="partials/footer.html"></include>

@@ -190,6 +190,7 @@ function navMenu() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const area = entry.target.getAttribute('id');
+
                 if (area === 'contact') {
                     menuButton.forEach(mb => mb.classList.remove('active'))
                     document.querySelector('[data-target="contact"]').classList.add('active')
@@ -201,6 +202,10 @@ function navMenu() {
                 if (area === 'team') {
                     menuButton.forEach(mb => mb.classList.remove('active'))
                     document.querySelector('[data-target="team"]').classList.add('active')
+                }
+                if (area === 'products') {
+                    menuButton.forEach(mb => mb.classList.remove('active'))
+                    document.querySelector('[data-target="products"]').classList.add('active')
                 }
                 if (area === 'home' || area === 'hero' || area === 'download') {
                     menuButton.forEach(mb => mb.classList.remove('active'))
