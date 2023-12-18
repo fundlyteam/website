@@ -1,0 +1,84 @@
+<include src="partials/header.html"></include>
+
+<main class="mt-20">
+
+    <form id="partnerships" class="bg-blue-50">
+        <h2 class="text-center lg:mb-8">Partnerships</h2>
+        <div class="p-16 rounded bg-primary">
+            <div class="md:flex md:space-x-8">
+                <div class="space-y-6 md:w-1/2">
+                    <label for="name">
+                        <input
+                                type="text"
+                                name="name"
+                                id="name"
+                                placeholder="Person Name*"
+                        />
+                    </label>
+                    <label for="entityName">
+                        <input
+                                type="text"
+                                name="entityName"
+                                id="entityName"
+                                placeholder="Entity Name"
+                        />
+                    </label>
+                    <label for="entityType">
+                        <select name="entityType" id="entityType">
+                            <option value="">Type*</option>
+                            <option value="Distributor">Distributor</option>
+                            <option value="Hospital">Hospital</option>
+                            <option value="Financial Institution">Financial Institution</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </label>
+                    <label for="designation">
+                        <input
+                                type="text"
+                                name="designation"
+                                id="designation"
+                                placeholder="Designation"
+                        />
+                    </label>
+
+                </div>
+                <div class="space-y-6 md:w-1/2">
+                    <label for="mobile">
+                        <input
+                                type="text"
+                                name="mobile"
+                                id="mobile"
+                                placeholder="Mobile Number*"
+                        />
+                    </label>
+                    <label for="email">
+                        <input
+                                type="text"
+                                name="email"
+                                id="email"
+                                placeholder="Email*"
+                        />
+                    </label>                    
+                    <label for="message">
+                            <textarea
+                                name="remark"
+                                id="remark"
+                                placeholder="Type your remark here"
+                                class="h-48 w-full lg:h-[120px] rounded p-2"
+                        ></textarea>
+                    </label>
+                </div>
+            </div>
+            <div class="flex justify-center pt-8">
+                <button
+                        class="px-4 py-3 font-semibold tracking-wide uppercase rounded shadow bg-accent lg:normal-case text-yellow-50"
+                        type="submit"
+                >
+                    Send Message
+                </button>
+            </div>
+        </div>
+    </form>
+
+</main>
+<include src="partials/footer.html"></include>

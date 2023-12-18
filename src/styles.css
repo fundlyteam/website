@@ -36,6 +36,7 @@ body {
   main section:not(#achievements),
   #about,
   #team,
+  #partnerships,
   #contact {
     @apply w-full space-y-4 px-4 py-8 md:px-8 lg:py-16 lg:px-[calc((100vw-1024px)/2)];
   }
@@ -77,6 +78,10 @@ body {
   }
 
   input {
+    @apply h-12 w-full rounded p-2 lg:text-sm;
+  }
+
+  select {
     @apply h-12 w-full rounded p-2 lg:text-sm;
   }
 
