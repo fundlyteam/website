@@ -207,6 +207,10 @@ function navMenu() {
                     menuButton.forEach(mb => mb.classList.remove('active'))
                     document.querySelector('[data-target="products"]').classList.add('active')
                 }
+                if (area === 'partnerships') {
+                    menuButton.forEach(mb => mb.classList.remove('active'))
+                    document.querySelector('[data-target="partnerships"]').classList.add('active')
+                }
                 if (area === 'home' || area === 'hero' || area === 'download') {
                     menuButton.forEach(mb => mb.classList.remove('active'))
                     document.querySelector('[data-target="home"]').classList.add('active')
@@ -287,4 +291,117 @@ $('#send-app-link').submit(function(e){
         }
     });
 
+});
+
+$('#partnerships').submit(function(e){
+    e.preventDefault();
+
+    if(!document.getElementById('partnerships').checkValidity()) {
+        return;
+    }
+
+    if($('#name').val() === ""){
+        Swal.fire({
+            title: 'Oops!',
+            text: 'Please enter your name.',
+            icon: 'error',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#025196'
+        });
+        return;
+    }
+
+    if($('#entityType').val() === ""){
+        Swal.fire({
+            title: 'Oops!',
+            text: 'Please enter select entity type.',
+            icon: 'error',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#025196'
+        });
+        return;
+    }
+
+    if($('#mobile').val() === ""){
+        Swal.fire({
+            title: 'Oops!',
+            text: 'Please enter your mobile number.',
+            icon: 'error',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#025196'
+        });
+        return;
+    }
+
+    // check if mobile number is valid and 10 digits
+    if($('#mobile').val() != ""){
+        if($('#mobile').val().length != 10){
+            Swal.fire({
+                title: 'Oops!',
+                text: 'Please enter a valid 10 digit mobile number.',
+                icon: 'error',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#025196'
+            });
+            return;
+        }
+    }
+
+    if($('#email').val() === ""){
+        Swal.fire({
+            title: 'Oops!',
+            text: 'Please enter your email.',
+            icon: 'error',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#025196'
+        });
+        return;
+    }
+
+    if($('#email').val() != ""){
+        // check if email is valid
+        var email = $('#email').val();
+        var atposition=email.indexOf("@");
+        var dotposition=email.lastIndexOf(".");
+        if (atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length){
+            Swal.fire({
+                title: 'Oops!',
+                text: 'Please enter a valid email address.',
+                icon: 'error',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#025196'
+            });
+            return;
+        }
+        
+    }
+
+
+    $.ajax({
+        url: "https://ardouranalytics.com/fundly/api/Website/partnershipsEnquiry",
+        type: "POST",
+        data: new FormData(this),
+        contentType: false,
+        cache: false,
+        processData: false,
+        success: function(response) {
+            $("#contact").trigger("reset"); // to reset form input fields
+            Swal.fire({
+                title: 'Thank You!',
+                text: 'Someone from our team will reach out to you shortly.',
+                icon: 'success',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#025196'
+            })
+        },
+        error: function(e) {
+            Swal.fire({
+                title: 'Oops!',
+                text: 'Something went wrong. Please try again later.',
+                icon: 'error',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#025196'
+            });
+        }
+    });
 });
