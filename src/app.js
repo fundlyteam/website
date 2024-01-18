@@ -211,6 +211,10 @@ function navMenu() {
                     menuButton.forEach(mb => mb.classList.remove('active'))
                     document.querySelector('[data-target="partnerships"]').classList.add('active')
                 }
+                if (area === 'marketplace') {
+                    menuButton.forEach(mb => mb.classList.remove('active'))
+                    document.querySelector('[data-target="marketplace"]').classList.add('active')
+                }
                 if (area === 'home' || area === 'hero' || area === 'download') {
                     menuButton.forEach(mb => mb.classList.remove('active'))
                     document.querySelector('[data-target="home"]').classList.add('active')
@@ -385,10 +389,10 @@ $('#partnerships').submit(function(e){
         cache: false,
         processData: false,
         success: function(response) {
-            $("#contact").trigger("reset"); // to reset form input fields
+            $("#partnerships").trigger("reset"); // to reset form input fields
             Swal.fire({
                 title: 'Thank You!',
-                text: 'Someone from our team will reach out to you shortly.',
+                text: "We've received your details. Our team will contact you soon. Thank you for your patience!",
                 icon: 'success',
                 confirmButtonText: 'OK',
                 confirmButtonColor: '#025196'
@@ -405,3 +409,4 @@ $('#partnerships').submit(function(e){
         }
     });
 });
+

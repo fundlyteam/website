@@ -5,6 +5,7 @@
     "build": "parcel build"
   },
   "devDependencies": {
+    "@parcel/transformer-json": "^2.11.0",
     "animated-tailwindcss": "^3.3.0",
     "autoprefixer": "^10.4.13",
     "parcel": "^2.7.0",
