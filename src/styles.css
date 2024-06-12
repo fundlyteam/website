@@ -305,3 +305,58 @@ body {
     @apply font-semibold;
   }
 }
+
+.fldg {
+  border: 1px solid black;
+  width: 100%;
+}
+
+.fldg-header {
+  font-size: 12px;
+  font-style: italic;
+  text-align: end;
+}
+
+main.extra div {
+  @apply space-y-4;
+}
+main.extra ul {
+  @apply space-y-4;
+}
+main.extra a {
+  @apply text-blue-500;
+}
+main.extra h5 {
+  @apply font-semibold;
+}
+
+.fldg {
+  border: 1px solid black;
+  width: 100%;
+}
+
+.fldg tr td {
+  border: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.fldg-header {
+  font-size: 12px;
+  font-style: italic;
+  text-align: end;
+}
+
+.fldg tr td:nth-child(2) {
+  text-align: right;
+}
+
+.fldg tr td:nth-child(3) {
+  text-align: right;
+}
+
+
+.fldg tr:nth-child(2) td {
+  text-align: center;
+  font-weight: bold;
+}
