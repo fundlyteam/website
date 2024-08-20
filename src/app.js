@@ -245,8 +245,12 @@ document.addEventListener('DOMContentLoaded', () => {
 $('#contact').submit(function(e){
     e.preventDefault();
 
+    var $submitButton = $('#sendContactMessage');
+    $submitButton.prop('disabled', true);
+    $submitButton.text('Sending...');
+
     $.ajax({
-        url: "https://ardouranalytics.com/fundly/api/Website/enquiry",
+        url: "http://localhost/ardouranalytics/fundly/api/Website/enquiry",
         type: "POST",
         data: new FormData(this),
         contentType: false,
@@ -260,10 +264,21 @@ $('#contact').submit(function(e){
                 icon: 'success',
                 confirmButtonText: 'OK',
                 confirmButtonColor: '#025196'
-            })
+            });
+            $submitButton.prop('disabled', false);
+            $submitButton.text('Send Message');
         },
         error: function(e) {
+            Swal.fire({
+                title: 'Oops!',
+                text: 'Something went wrong. Please try again later.',
+                icon: 'error',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#025196'
+            });
             console.log(e);
+            $submitButton.prop('disabled', false);
+            $submitButton.text('Send Message');
         }
     });
 });
@@ -271,6 +286,10 @@ $('#contact').submit(function(e){
 $('#send-app-link').submit(function(e){
     e.preventDefault();
 
+    var $submitButton = $('#sendMetheLink');
+    $submitButton.prop('disabled', true);
+    $submitButton.text('Sending...');
+    
     $.ajax({
         url: "https://ardouranalytics.com/fundly/api/Website/app",
         type: "POST",
@@ -288,10 +307,21 @@ $('#send-app-link').submit(function(e){
                 confirmButtonText: 'OK',
                 confirmButtonColor: '#025196'
             })
+            $submitButton.prop('disabled', false);
+            $submitButton.text('Send me the link');
         },
         error: function(e) {
+            Swal.fire({
+                title: 'Oops!',
+                text: 'Something went wrong. Please try again later.',
+                icon: 'error',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#025196'
+            });
             console.log(e);
             document.getElementById('download-app-modal').classList.add('hidden');
+            $submitButton.prop('disabled', false);
+            $submitButton.text('Send me the link');        
         }
     });
 
@@ -300,7 +330,13 @@ $('#send-app-link').submit(function(e){
 $('#partnerships').submit(function(e){
     e.preventDefault();
 
+    var $submitButton = $('#submitPartnershipsInquirey');
+    $submitButton.prop('disabled', true);
+    $submitButton.text('Sending...');
+
     if(!document.getElementById('partnerships').checkValidity()) {
+        $submitButton.prop('disabled', false);
+        $submitButton.text('Send Message');
         return;
     }
 
@@ -312,6 +348,8 @@ $('#partnerships').submit(function(e){
             confirmButtonText: 'OK',
             confirmButtonColor: '#025196'
         });
+        $submitButton.prop('disabled', false);
+        $submitButton.text('Send Message');
         return;
     }
 
@@ -323,6 +361,8 @@ $('#partnerships').submit(function(e){
             confirmButtonText: 'OK',
             confirmButtonColor: '#025196'
         });
+        $submitButton.prop('disabled', false);
+        $submitButton.text('Send Message');
         return;
     }
 
@@ -334,6 +374,8 @@ $('#partnerships').submit(function(e){
             confirmButtonText: 'OK',
             confirmButtonColor: '#025196'
         });
+        $submitButton.prop('disabled', false);
+        $submitButton.text('Send Message');
         return;
     }
 
@@ -347,6 +389,8 @@ $('#partnerships').submit(function(e){
                 confirmButtonText: 'OK',
                 confirmButtonColor: '#025196'
             });
+            $submitButton.prop('disabled', false);
+            $submitButton.text('Send Message');
             return;
         }
     }
@@ -359,6 +403,8 @@ $('#partnerships').submit(function(e){
             confirmButtonText: 'OK',
             confirmButtonColor: '#025196'
         });
+        $submitButton.prop('disabled', false);
+        $submitButton.text('Send Message');
         return;
     }
 
@@ -375,12 +421,13 @@ $('#partnerships').submit(function(e){
                 confirmButtonText: 'OK',
                 confirmButtonColor: '#025196'
             });
+            $submitButton.prop('disabled', false);
+            $submitButton.text('Send Message');
             return;
         }
         
     }
-
-
+    
     $.ajax({
         url: "https://ardouranalytics.com/fundly/api/Website/partnershipsEnquiry",
         type: "POST",
@@ -396,7 +443,10 @@ $('#partnerships').submit(function(e){
                 icon: 'success',
                 confirmButtonText: 'OK',
                 confirmButtonColor: '#025196'
-            })
+            });
+            // Re-enable the submit button
+            $submitButton.prop('disabled', false);
+            $submitButton.text('Send Message');
         },
         error: function(e) {
             Swal.fire({
@@ -406,6 +456,9 @@ $('#partnerships').submit(function(e){
                 confirmButtonText: 'OK',
                 confirmButtonColor: '#025196'
             });
+            // Re-enable the submit button
+            $submitButton.prop('disabled', false);
+            $submitButton.text('Send Message');
         }
     });
 });
