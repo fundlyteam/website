@@ -80,10 +80,10 @@
       <li data-target="home" class="menu-button active"><a href="index.html#home">Home</a></li>
       <li data-target="about" class="menu-button"><a href="index.html#about">About</a></li>
       <li data-target="products" class="menu-button">
-          <a href="products.html">Products</a>
+          <a href="javascript:void(0);">Products<span class="arrow">&#9662;</span></a>
           <ul class="submenu">
-              <li><a href="products.html">Insta Cash</a></li>
-              <li><a href="pharma-payments.html">Pharma Payments</a></li>
+              <li data-target="products" ><a href="products.html">Insta Cash</a></li>
+              <li data-target="products" ><a href="pharma-payments.html">Pharma Payments</a></li>
           </ul>
       </li>
 
@@ -145,12 +145,25 @@
         <ul class="space-y-4">
           <li><a href="index.html#home" onclick="hideMobileNav()">Home</a></li>
           <li><a href="index.html#about">About</a></li>
-          <li class="menu-button">
-              <a href="products.html">Products</a>
+          <li>
+              <a href="javascript:void(0);" onclick="toggleSubmenu()">Products&#9662;</a>
           </li>
-          <li><a href="products.html">Insta Cash</a></li>
-          <li><a href="pharma-payments.html">Pharma Payments</a></li>  
-          <li><a href="fundlymart.html">FundlyMart</a></li>
+          <li class="products-submenu1" style="display: none;"><a href="products.html">Insta Cash</a></li>
+          <li class="products-submenu2" style="display: none;"><a href="pharma-payments.html">Pharma Payments</a></li>
+          
+          <script>
+              function toggleSubmenu() {
+                  var submenu1 = document.querySelector('.products-submenu1');
+                  var submenu2 = document.querySelector('.products-submenu2');
+                  if (submenu1.style.display === 'block' && submenu2.style.display === 'block') {
+                      submenu1.style.display = 'none';
+                      submenu2.style.display = 'none';
+                  } else {
+                      submenu1.style.display = 'block';
+                      submenu2.style.display = 'block';
+                  }
+              }
+          </script>          <li><a href="fundlymart.html">FundlyMart</a></li>
           <li><a href="index.html#team">Team</a></li>
           <li><a href="partnerships.html">Partnerships</a></li>
           <li><a href="index.html#contact">Contact</a></li>
